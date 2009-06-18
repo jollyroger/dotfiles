@@ -13,29 +13,50 @@ import XMonad.Layout.Circle
 import XMonad.Layout.Named
 import XMonad.Layout.LayoutCombinators
 
-myLayouts = named "dwmtiled" tiled ||| named "mirror" (Mirror tiled) ||| named "full" Full ||| named "circle" Circle ||| named "tabbed" simpleTabbedBottom
+myLayouts = named "dwmtiled" tiled ||| 
+	named "mirror" (Mirror tiled) ||| 
+	named "full" Full ||| 
+	named "circle" Circle ||| 
+	named "tabbed" simpleTabbedBottom
     where
         tiled   = Tall nmaster delta ratio
         nmaster = 1
         ratio   = 1/2
         delta   = 3/100
 
-ignoreWindows = [ className =? "trayer" --> doIgnore
+ignoreWindows = [ 
+	className =? "trayer" --> doIgnore
 	, className =? "fbpanel" --> doIgnore
---	, className =? "stalonetray" --> doIgnore
+	, className =? "stalonetray" --> doIgnore
 	]
 
-floatWindows = [ className =? "Xmessage" --> doFloat
+floatWindows = [ 
+	className =? "Xmessage" --> doFloat
+	, className =? "Menu" --> doFloat
 	]
 
+manageHooks = [
+	manageDocks <+> manageHook defaultConfig
+	]
+
+myShortcuts = [
+	((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
+	, ((controlMask, xK_Print), spawn "scrot -s")
+	, ((0, xK_Print), spawn "scrot")
+	, ((mod4Mask, xK_d), sendMessage $ JumpToLayout "dwmtiled")
+	, ((mod4Mask, xK_m), sendMessage $ JumpToLayout "mirror")
+	, ((mod4Mask, xK_f), sendMessage $ JumpToLayout "full")
+	, ((mod4Mask, xK_b), sendMessage $ JumpToLayout "tabbed")
+	, ((mod4Mask, xK_c), sendMessage $ JumpToLayout "circle")
+	]
+	
+myManageHook = composeAll ( concat [manageHooks, ignoreWindows, floatWindows] )
+	
 main = do
-xmproc <- spawnPipe "xmobar /home/asenkovych/.xmonad/xmobar"
+xmproc <- spawnPipe "xmobar /home/jolly_roger/.xmonad/xmobar"
 
 xmonad $ defaultConfig { 
-	manageHook = composeAll [
-		manageDocks <+> manageHook defaultConfig,
-		className =? "stalonetray" --> doIgnore
-		]
+	manageHook = myManageHook
 	, layoutHook = smartBorders $  avoidStruts $ myLayouts
 	, logHook = dynamicLogWithPP $ xmobarPP { 
 		ppOutput = hPutStrLn xmproc
@@ -43,13 +64,4 @@ xmonad $ defaultConfig {
 	}
 
 	, modMask = mod4Mask
-      } `additionalKeys`
-      [((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock"),
-       ((controlMask, xK_Print), spawn "scrot -s"),
-       ((0, xK_Print), spawn "scrot"),
-       ((mod4Mask, xK_d), sendMessage $ JumpToLayout "dwmtiled"),
-       ((mod4Mask, xK_m), sendMessage $ JumpToLayout "mirror"),
-       ((mod4Mask, xK_f), sendMessage $ JumpToLayout "full"),
-       ((mod4Mask, xK_b), sendMessage $ JumpToLayout "tabbed"),
-       ((mod4Mask, xK_c), sendMessage $ JumpToLayout "circle")
-      ]
+      } `additionalKeys` myShortcuts
