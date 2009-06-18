@@ -1,0 +1,19 @@
+Config { font = "-misc-fixed-medium-r-normal-*-13-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Static { xpos = 0, ypos = 0, width = 1520, height = 16 }
+       , lowerOnStart = True
+       , commands = [ Run Weather "UKKK" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
+                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Com "uname" ["-s","-r"] "" 36000
+    		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run StdinReader
+		    , Run Com "/home/asenkovych/.xmonad/scripts/thrm.sh" [] "thrm" 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% | %cpu% | %memory% * %swap% | %eth1% | %thrm% }{ <fc=#ee9a00>%date%</fc>| %UKKK% | %uname%"
+       }
