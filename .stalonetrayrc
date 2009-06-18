@@ -1,0 +1,6 @@
+geometry 160x16-0+0 
+icon_size 16
+background black
+icon_gravity NE
+# max_width 175
+# max_height 17
