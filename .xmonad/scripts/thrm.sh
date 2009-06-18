@@ -1,3 +1,3 @@
 #!/bin/sh
-TEMPERATURE=`sensors|awk '/^Core0.*/ {print $3}'`
-echo Temp: ${TEMPERATURE}
+TEMPERATURE=`awk '{print $2}' /proc/acpi/thermal_zone/THRM/temperature`
+echo Temp: ${TEMPERATURE}°C
