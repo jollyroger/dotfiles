@@ -28,6 +28,3 @@ export RPROMPT='[%*]'
 
 #QEMU SOUND PARAMETER
 QEMU_AUDIO_DRV=dsound
-
-# Import local profile
-source ~/.profile
