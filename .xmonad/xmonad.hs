@@ -1,9 +1,13 @@
 import XMonad hiding ( (|||) )
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+import XMonad.Util.EZConfig(additionalKeys)
+
+-- Pipes, environment variables, etc.
 import XMonad.Util.Run(spawnPipe)
 import System.IO
-import XMonad.Util.EZConfig(additionalKeys)
+import System.Environment
 
 -- Importing Layouts, Combinators, etc.
 import XMonad.Layout.Tabbed
@@ -31,7 +35,7 @@ ignoreWindows = [
 	]
 
 floatWindows = [ 
-	className =? "Xmessage" --> doFloat
+	className =? "Xmessage" --> doCenterFloat
 	, className =? "Menu" --> doFloat
 	]
 
@@ -53,7 +57,8 @@ myShortcuts = [
 myManageHook = composeAll ( concat [manageHooks, ignoreWindows, floatWindows] )
 	
 main = do
-xmproc <- spawnPipe "xmobar /home/jolly_roger/.xmonad/xmobar"
+home <- getEnv "HOME"
+xmproc <- spawnPipe ("xmobar " ++ home  ++ "/.xmonad/xmobar")
 
 xmonad $ defaultConfig { 
 	manageHook = myManageHook
