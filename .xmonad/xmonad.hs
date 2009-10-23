@@ -37,6 +37,10 @@ ignoreWindows = [
 floatWindows = [ 
 	className =? "Xmessage" --> doCenterFloat
 	, className =? "Menu" --> doFloat
+	, className =? "Qjackctl" --> doFloat
+	, resource =? "qsynth" --> doFloat
+	, title =? "glxgears" --> doFloat
+	, title =? "ALSA Mixer" --> doFloat
 	]
 
 manageHooks = [
@@ -61,7 +65,8 @@ home <- getEnv "HOME"
 xmproc <- spawnPipe ("xmobar " ++ home  ++ "/.xmonad/xmobar")
 
 xmonad $ defaultConfig { 
-	manageHook = myManageHook
+	terminal = "x-terminal-emulator"
+	, manageHook = myManageHook
 	, layoutHook = smartBorders $  avoidStruts $ myLayouts
 	, logHook = dynamicLogWithPP $ xmobarPP { 
 		ppOutput = hPutStrLn xmproc
