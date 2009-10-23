@@ -1,6 +1,8 @@
-geometry 160x16-0+0 
+geometry 10x1+1120+0 
+max_geometry 10x1
 icon_size 16
 background black
 icon_gravity NE
-# max_width 175
-# max_height 17
+grow_gravity W
+decorations none
+skip_taskbar

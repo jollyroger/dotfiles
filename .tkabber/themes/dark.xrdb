@@ -1,0 +1,227 @@
+! Main window geometry
+Tkabber.geometry:		    788x550-70+100
+!Tkabber.geometry:		    180x400-70+100
+
+! Chat window geometry (in no tabs mode)
+*Chat.geometry:			    500x500
+
+! Browser and Headlines window geometry (in no tabs mode)
+*JBrowser.geometry:		    500x500
+
+! Roster width (tabbed interface only)
+Tkabber.mainRosterWidth:	    120
+
+! Roster width in groupchat windows
+Tkabber.chatRosterWidth:	    90
+
+! Scrollbar bed color
+*troughColor:			    #424242
+
+*background:			    #5e5e5e
+*foreground:			    #ffffff
+*readonlyBackground:		    #5e5e5e
+*disabledBackground:		    #5e5e5e
+*disabledForeground:		    #cccccc
+*errorForeground:		    indianred1
+
+! Colors, which are used when mouse is over the item
+*activeBackground:		    #550066
+*activeForeground:		    #ffffff
+
+! Colors and border width selected item
+*selectBackground:		    #550066
+*selectForeground:		    #ffffff
+*selectBorderWidth:		    0
+*inactiveSelectBackground:  	    #550066
+
+! Color for checkboxes
+*selectColor:			    #4f135b
+
+! Color of traversal highlight rectangle
+*highlightBackground:		    #5e5e5e
+*highlightColor:		    #000000
+
+! Color of insertion cursor
+*insertBackground:		    #ffffff
+
+! Font for drawing text (except chats and roster font)
+*font:				    fixed
+
+! Currently there is only progressbar (at the splash screen)
+*ProgressBar.foreground:	    #550066
+
+! Flatten ComboBox and ArrowButton
+*Spinbox.borderWidth:		    1
+*Spinbox.background:		    #424242
+*SpinBox.borderWidth:		    1
+*SpinBox*Entry*highlightBackground: #424242
+*ComboBox.borderWidth:		    1
+*ArrowButton.borderWidth:	    0
+*ArrowButton.highlightThickness:    0
+
+! Colors for multicolumn listboxes (as in search result window)
+*Mclistbox.background:		    #424242
+*Mclistbox.labelActiveBackground:   #550066
+*Mclistbox.labelBackground:	    #5e5e5e
+*Mclistbox.labelForeground:	    #ffffff
+*Mclistbox.labelActiveForeground:   #ffffff
+
+! Type of subitem in roster (1 - display number of resources,
+! 2 - display arrow, 3 - display both, 0 - display nothing
+*Roster.subitemtype:		    3
+
+! Roster background color
+*Roster.cbackground:		    #424242
+
+! Inactive JID background color
+*Roster.jidfill:		    #424242
+
+! Active JID background color
+*Roster.jidhlfill:		    #4f135b
+
+! Color of border around JID
+*Roster.jidborder:		    #424242
+
+! Inctive group background color
+*Roster.groupfill:		    #5e5e5e
+
+! Inactive closed group background color
+*Roster.groupcfill:		    #5e5e5e
+
+! Active group background color
+*Roster.grouphlfill:		    #550066
+
+! Color of border around group
+*Roster.groupborder:		    #5e5e5e
+
+! Indent of group names
+*Roster.groupindent:		    21
+
+! Indent of JIDs
+*Roster.jidindent:		    42
+
+! Indent of second order JIDs
+! (resources for those who is logged in multiple times)
+*Roster.subjidindent:		    62
+
+! Indent of group icons (closed or open arrow icon)
+*Roster.groupiconindent:	    2
+
+! Indent of group icons when subitemtype is 2 or 3
+*Roster.subgroupiconindent:	    2
+
+! Indent of regular JID icons (status icon)
+*Roster.iconindent:		    21
+
+! Indent of second order JID icons
+*Roster.subiconindent:		    42
+
+! Additional amount of text height
+*Roster.textuppad:		    0
+*Roster.textdownpad:		    0
+
+! Vertical distance between adjacent items
+*Roster.linepad:		    2
+
+! Foregrounds of JID label
+! (stalkerforeground is for contacts with pending subscription)
+*Roster.stalkerforeground:	    tan
+
+! Other colors are selfexplanatory
+*Roster.unavailableforeground:	    grey72
+*Roster.dndforeground:		    rosybrown1
+*Roster.xaforeground:		    azure3
+*Roster.awayforeground:		    azure3
+*Roster.availableforeground:	    #ffffff
+*Roster.chatforeground:		    #ffffff
+
+! Colors in chat and groupchat windows
+*Chat*Text*Label.background:		    #424242
+
+! Color of other people nicknames
+*Chat.theyforeground:		    coral
+
+! Color of my nickname
+*Chat.meforeground:		    lightblue
+
+! Colors of server messages
+*Chat.serverlabelforeground:	    darkolivegreen1
+*Chat.serverforeground:		    hotpink
+
+! Color of info & error messages
+*Chat.infoforeground:		    lightblue
+*Chat.errforeground:		    indianred1
+
+! Color of inactive urls in text
+*urlforeground:		    lightblue
+
+! Color of active urls in text
+*urlactiveforeground:	    lightblue1
+
+! Colors of erroneous words (when ispell module is using)
+*Text.errorColor:		    coral
+*Text.comboColor:		    lightblue
+
+! Colors of tab labels (when in tabbed mode)
+! Usual color
+*alertColor0: white
+
+! Color when server message is arrived
+*alertColor1: hotpink
+
+! Color when message is arrived
+*alertColor2: lightblue
+
+! Color when personally addressed message is arrived
+*alertColor3: coral
+
+! Colors for browser and discovery service windows
+*JBrowser.fill:			    #ffffff
+*JBrowser.activefill:		    #ffffff
+*JBrowser.border:		    #424242
+*JBrowser.nscolor:		    grey72
+*JBrowser.nsactivecolor:	    grey72
+
+*JDisco.fill:			    #ffffff
+*JDisco.activefill:		    #ffffff
+*JDisco.border:			    #424242
+*JDisco.featurecolor:		    grey72
+*JDisco.identitycolor:		    DarkSeaGreen2
+*JDisco.optioncolor:		    HotPink
+*Tree*background:		    #424242
+*linesfill:			    #ffffff
+*crossfill:			    #ffffff
+
+*Customize.varforeground:	    lightblue
+
+! Tooltip options
+*Balloon*background:		    #424242
+*Balloon*foreground:		    #ffffff
+*DynamicHelp.background:	    #424242
+*DynamicHelp.foreground:	    #ffffff
+
+
+*Listbox.background:		    #424242
+*Listbox.foreground:		    #ffffff
+*Listbox.borderWidth:		    1
+
+*Text.background:		    #424242
+*Text.foreground:		    #ffffff
+*Text.borderWidth:		    1
+
+*Entry.background:		    #424242
+*Entry.foreground:		    #ffffff
+*Entry.borderWidth:		    1
+
+*NoteBook*Entry.background:	    #424242
+*NoteBook*Entry.disabledBackground: #5e5e5e
+*NoteBook*Entry.foreground:	    #ffffff
+
+*Button.borderWidth:		    1
+
+*Menu.activeBorderWidth:	    1
+*Menu.borderWidth:		    1
+*Menubutton.borderWidth:	    1
+
+*Buttonbox*borderWidth:		    0
+*Buttonbox*activeBorderWidth:	    0

@@ -1,0 +1,90 @@
+*background:			    black
+*foreground:			    grey
+*disabledBackground:		    black
+*disabledForeground:		    grey50
+*readonlyBackground:		    #000000
+*errorForeground:		    coral3
+*activeBackground:		    grey30
+*activeForeground:		    grey100
+*selectBackground:		    grey
+*selectForeground:		    black
+*selectBorderWidth:		    0
+*inactiveSelectBackground:  	    grey
+*highlightSearchBackground:         #c1eec1
+*highlightBackground:		    black
+*highlightColor:		    grey
+*insertBackground:		    grey
+*troughColor:			    black
+
+*Spinbox.borderWidth:		    1
+*Spinbox.background:		    black
+*SpinBox.borderWidth:		    1
+*SpinBox*Entry*highlightBackground: black
+*ComboBox.borderWidth:		    1
+*ArrowButton.borderWidth:	    0
+*ArrowButton.highlightThickness:    0
+
+*Mclistbox.background:		    black
+*Mclistbox.labelBackground:	    black
+*Mclistbox.labelForeground:	    grey
+*Mclistbox.labelActiveBackground:   grey30
+*Mclistbox.labelActiveForeground:   grey100
+
+*Roster.cbackground:		    Black
+*Roster.jidfill:		    Black
+*Roster.jidhlfill:		    #382b54
+*Roster.jidborder:		    Black
+*Roster.groupfill:		    Gray30
+*Roster.groupcfill:		    Gray30
+*Roster.grouphlfill:		    MediumPurple4
+*Roster.groupborder:		    Black
+
+*JBrowser.fill:			    Grey
+*JBrowser.activefill:		    Grey
+*JBrowser.border:		    Black
+*JBrowser.nscolor:		    LightSteelBlue3
+*JBrowser.nsactivecolor:	    LightSteelBlue3
+*linesfill:			    Grey
+*crossfill:			    Grey
+
+*JDisco.fill:			    Grey
+*JDisco.activefill:		    Grey
+*JDisco.border:			    Black
+*JDisco.featurecolor:		    LightSteelBlue3
+*JDisco.identitycolor:		    darkolivegreen3
+*JDisco.optioncolor:		    mediumorchid3
+*Tree*background:		    Black
+
+*Roster.stalkerforeground:	    grey40
+*Roster.unavailableforeground:	    grey40
+*Roster.dndforeground:		    grey45
+*Roster.xaforeground:		    grey50
+*Roster.awayforeground:		    grey50
+*Roster.availableforeground:	    grey55
+*Roster.chatforeground:		    grey55
+
+*Chat*Text*Label.background:	    black
+*Chat.theyforeground:		    cornflowerblue
+*Chat.meforeground:		    coral3
+*Chat.serverlabelforeground:	    darkolivegreen3
+*Chat.serverforeground:		    mediumorchid3
+*Chat.infoforeground:		    cornflowerblue
+*Chat.errforeground:		    coral3
+*urlforeground:			    cornflowerblue
+*urlactiveforeground:		    skyblue
+*Text.errorColor:		    coral3
+*Text.comboColor:		    cornflowerblue
+
+*ProgressBar.foreground:	    grey
+
+*alertColor0:			    Grey
+*alertColor1:			    mediumorchid3
+*alertColor2:			    cornflowerblue
+*alertColor3:			    coral3
+
+*NoteBook*Entry.background:	    #000000
+*NoteBook*Entry.disabledBackground: #000000
+*NoteBook*Entry.foreground:	    grey
+
+*Customize.varforeground:	    cornflowerblue
+
