@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deviceinfo version="0.2">
+  <device>
+    <match key="input.x11_driver" string="synaptics">
+      <merge key="input.x11_options.VertEdgeScroll" type="string">True</merge>
+      <merge key="input.x11_options.HorizEdgeScroll" type="string">True</merge>
+    </match>
+  </device>
+</deviceinfo>

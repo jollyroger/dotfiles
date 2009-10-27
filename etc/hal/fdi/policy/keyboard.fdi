@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deviceinfo version="0.2">
+	<device>
+		<match key="info.capabilities" contains="input.keyboard">
+			<merge key="input.x11_options.XkbModel"
+				type="string">pc105</merge>
+			<merge key="input.x11_driver"
+				type="string">evdev</merge>
+			<merge key="input.x11_options.XkbLayout"
+				type="string">us,ua,ru</merge>
+			<merge key="input.x11_options.XkbVariant"
+				type="string">,winkeys,winkeys</merge>
+			<merge key="input.x11_options.XkbOptions"
+				type="string">grp:ctrl_shift_toggle,grp_led:scroll</merge>
+		</match>
+	</device>
+</deviceinfo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deviceinfo version="0.2">
+	<device>
+		<match key="info.capabilities" contains="input.mouse">
+			<merge key="input.x11_driver"
+				type="string">evdev</merge>
+		</match>
+	</device>
+</deviceinfo>
