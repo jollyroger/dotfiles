@@ -56,6 +56,9 @@ set textwidth=80
 " Search properties
 " ------------------------------------------------------------------------------
 
+" Enable smart case sensivity
+set smartcase
+
 " Enable incremental search
 set incsearch
 
@@ -70,13 +73,6 @@ set mousehide
 " ------------------------------------------------------------------------------
 " Work with buffers, tabs, etc
 " ------------------------------------------------------------------------------
-
-"Work with tabs instead of buffers
-nmap :bn :tabNext
-nmap :bp :tabprevious
-nmap :e :tabnew
-"nmap :badd :tabnew
-"nmap :bc :tabc
 
 " Default terminal encoding
 set termencoding=utf-8
@@ -160,4 +156,11 @@ imap <F12> <esc>:Ex<cr>i
 vmap < <gv
 vmap > >gv
 
+" Set nice color scheme
 colorscheme desert256
+
+" Dictionary for spelling errors checking
+set dictionary=/usr/share/dict/words
+
+" Map shortcut to toggle paste mode
+set pastetoggle=<F4>
