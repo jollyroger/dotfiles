@@ -31,9 +31,9 @@ URxvt.font:	-misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
 !URxvt*iconFile: /usr/share/pixmaps/urxvt_32x32.xpm
 URxvt.background: #000000
 URxvt.foreground: #AFB8FA
-URxvt.fading: 40  
-URxvt.shading: 100
-URxvt.transparent: false
+URxvt.fading: 50  
+URxvt.shading: 30
+URxvt.transparent: true
 URxvt.fadeColor: #666666
 URxvt.tintColor: #3F3F3F
 URxvt.scrollstyle: plain
@@ -45,7 +45,7 @@ URxvt.scrollBar_floating: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 0
 URxvt.externalBorder: 0
-URxvt.borderLess: true
+URxvt.borderLess: false
 URxvt.insecure: true
 !URxvt.perl-ext-common: default,tabbed,matcher
 
