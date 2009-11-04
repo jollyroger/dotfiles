@@ -26,6 +26,9 @@ set number
 set novisualbell
 set t_vb=
 
+" Set 256 colour support 
+set t_Co=256
+
 " ------------------------------------------------------------------------------
 " Indentation properties
 " ------------------------------------------------------------------------------
@@ -38,11 +41,13 @@ set autoindent
 
 " Enable ``smart'' indentation
 set smartindent
-
-" Tabulation properties (use tabs instead of spaces)
-set shiftwidth=8
-set softtabstop=8
-set tabstop=8
+	
+" Tabulation properties (use spaces instead of tabs)
+set smarttab
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 " Text width and word wrap
 set textwidth=80
@@ -154,3 +159,5 @@ imap <F12> <esc>:Ex<cr>i
 
 vmap < <gv
 vmap > >gv
+
+colorscheme desert256
