@@ -56,8 +56,5 @@ proc finload {} {
 	set ::sound::options(mute_if_focus) 1
 	set ::sound::options(external_play_program) {aplay}
 
-	set ::plugins::session::options(save_on_exit) 1
-	set ::plugins::session::options(open_on_start) 1
-
 	set ::::tls_warnings 0
 }
