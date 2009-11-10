@@ -9,8 +9,11 @@ day with and which can be helpfull to anyone.
 
 TODO:
 
- * Make vim keyboadrd shortcuts work in urxvt just like in xterm
  * Add hooks for screen configuration detection and automatic xmobar and
    stalonetray configuration
  * Add installation script or use make to do this
  * Write a list of configured software
+
+DONE:
+
+ * Make vim keyboadrd shortcuts work in urxvt just like in xterm (dirty hack)

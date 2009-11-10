@@ -49,5 +49,13 @@ URxvt.borderLess: false
 URxvt.insecure: true
 !URxvt.perl-ext-common: default,tabbed,matcher
 
+! Xterm keys simulation
+URxvt.keysym.C-Prior: \033[5;5~
+URxvt.keysym.C-Next: \033[6;5~
+URxvt.keysym.C-Left: \033[1;5D
+URxvt.keysym.C-Right: \033[1;5C
+URxvt.keysym.C-Up: \033[1;5A
+URxvt.keysym.C-Down: \033[1;5B
+
 ! Tkabber settings
 *mainRosterWidth: 200
