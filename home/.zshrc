@@ -54,7 +54,7 @@ export RPROMPT='[%*]'
 export QEMU_AUDIO_DRV=dsound
 
 # Mail settings
-export MAIL=/var/mail
+export MAIL=/var/mail/$USER
 
 bindkey '\E[5~' history-beginning-search-backward # Search history backward with PgUp
 bindkey '\E[6~' history-beginning-search-forward  # Search history forward with PgDown
