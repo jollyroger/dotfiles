@@ -28,6 +28,7 @@ setopt beep
 
 # Compinstall
 zstyle :compinstall filename '~/.zshrc'
+# expand s-a to sites-available
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit
 compinit

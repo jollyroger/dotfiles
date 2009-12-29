@@ -161,4 +161,8 @@ vmap < <gv
 vmap > >gv
 
 colorscheme desert256
+au BufRead,BufNewFile */nginx/nginx.conf set ft=nginx
+au BufRead,BufNewFile */nginx/sites-*/* set ft=nginx
+au BufRead,BufNewFile */nginx/conf/* set ft=nginx
+au BufRead,BufNewFile */nginx/conf.d/* set ft=nginx
 set runtimepath+=/usr/share/lilypond/2.12.2/vim
