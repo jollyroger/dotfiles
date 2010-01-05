@@ -20,3 +20,22 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# add Cabal executables in PATH
+if [ -d "$HOME/.cabal/bin" ] ; then
+    PATH="$HOME/.cabal/bin:$PATH"
+fi
+
+
+# Setting variables for using gpg-agent. This includes ssh-agent emulation also
+# (see /etc/X11/Xdefaults.d/90gpg-agent)
+GPG_ENV_FILENAME=${HOME}/.gnupg/gpg-agent-info-`hostname`
+if [ -f "$GPG_ENV_FILENAME" ]; then
+    . $GPG_ENV_FILENAME
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+    export SSH_AGENT_PID
+fi
+
+# Taken from man gpg-agent
+export GPG_TTY=`tty`
