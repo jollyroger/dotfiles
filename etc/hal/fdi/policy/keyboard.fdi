@@ -11,7 +11,7 @@
 			<merge key="input.x11_options.XkbVariant"
 				type="string">,winkeys,winkeys</merge>
 			<merge key="input.x11_options.XkbOptions"
-				type="string">grp:ctrl_shift_toggle,grp_led:scroll</merge>
+				type="string">grp:ctrl_shift_toggle,grp_led:scroll,compose:ralt</merge>
 		</match>
 	</device>
 </deviceinfo>
