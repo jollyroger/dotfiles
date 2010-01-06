@@ -62,7 +62,7 @@ myManageHook = composeAll ( concat [manageHooks, ignoreWindows, floatWindows] )
 	
 main = do
 home <- getEnv "HOME"
-xmproc <- spawnPipe ("xmobar " ++ home  ++ "/.xmonad/xmobar")
+xmproc <- spawnPipe ("xmobar")
 
 xmonad $ defaultConfig { 
 	terminal = "x-terminal-emulator"
