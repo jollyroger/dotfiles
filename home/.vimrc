@@ -23,8 +23,7 @@ set number
 "set cul
 
 " Disabling bell
-set novisualbell
-set t_vb=
+set visualbell
 
 " Set 256 colour support 
 set t_Co=256

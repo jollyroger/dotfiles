@@ -31,9 +31,9 @@ URxvt.font:	-misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
 !URxvt*iconFile: /usr/share/pixmaps/urxvt_32x32.xpm
 URxvt.background: #000000
 URxvt.foreground: #AFB8FA
-URxvt.fading: 50  
-URxvt.shading: 30
-URxvt.transparent: true
+URxvt.fading: 10  
+URxvt.shading: 0
+URxvt.transparent: false
 URxvt.fadeColor: #666666
 URxvt.tintColor: #3F3F3F
 URxvt.scrollstyle: plain
@@ -47,6 +47,7 @@ URxvt.internalBorder: 0
 URxvt.externalBorder: 0
 URxvt.borderLess: false
 URxvt.insecure: true
+URxvt.urgentOnBell: true
 !URxvt.perl-ext-common: default,tabbed,matcher
 
 ! Xterm keys simulation
