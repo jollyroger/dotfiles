@@ -2,10 +2,10 @@
 xscreensaver -no-splash &
 
 # Enable compositing support
-#xcompmgr -c &
+xcompmgr -n &
 
 # Setting the wallpaper
-xpmroot ~/.wallpaper.xpm &
+feh --scale-bg ~/.wallpaper.xpm &
 
 # Enable system tray
 stalonetray &

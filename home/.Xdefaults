@@ -29,7 +29,8 @@ Xft.rgba: none
 ! URxvt settings
 URxvt.font:	-misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
 !URxvt*iconFile: /usr/share/pixmaps/urxvt_32x32.xpm
-URxvt.background: #000000
+URxvt.background: rgba:0000/0000/0000/eeee
+URxvt.depth: 32
 URxvt.foreground: #AFB8FA
 URxvt.fading: 10  
 URxvt.shading: 0

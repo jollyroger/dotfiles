@@ -1,7 +1,8 @@
-import XMonad hiding ( (|||) )
+Rmport XMonad hiding ( (|||) )
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.UrgencyHook
 import XMonad.Util.EZConfig(additionalKeys)
 
 -- Pipes, environment variables, etc.
@@ -64,7 +65,7 @@ main = do
 home <- getEnv "HOME"
 xmproc <- spawnPipe ("xmobar")
 
-xmonad $ defaultConfig { 
+xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig { 
 	terminal = "x-terminal-emulator"
 	, manageHook = myManageHook
 	, layoutHook = smartBorders $  avoidStruts $ myLayouts
