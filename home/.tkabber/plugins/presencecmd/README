@@ -1,0 +1,115 @@
+"Presence command" chat plugin for Tkabber.
+$Id: README 1190 2007-08-17 17:04:00Z sergei $
+
+I. The idea.
+
+This plugin provides additional set of what are called
+"IRC-style chat commands" in Tkabber -- specially formatted
+messages which are recognized as commands to Tkabber. They are
+parsed and executed, then  their text is thrown away (widely
+known examples of standard chat commands are: /clear, /nick,
+/ban, /leave, etc).
+
+Provided commands are:
+* /presence allows to change "master" (i.e. basic, main,
+  global) presence of the user [1];
+* /chatpresence (or its alias /thispresence) allows to change
+  the presence in this chat session (which may be a MUC room)
+  only, in other words it sends what is called "directed
+  presence" to the chat peer or room [2]. (See also "Notes"
+  section below.)
+
+II. Usage.
+
+Both commands have identical syntax and they behave identically
+-- changes only the presence they operate on.
+
+The formal syntax is:
+/presence ?presence|clear[status]?
+?status message?
+
+Fields surrounded by "?" represent optional parts, so does text
+in [...]. "|" specifies alteration (a set of mutually exclusive
+options).
+
+Note that while both presence and status message fields are
+marked optional at least one of them MUST appear. Otherwise the
+command has no sense and the usage info is shown in the chat
+log window.
+
+The presence field may have this (standard) values, literally:
+* available -- user is available;
+* avail -- shortcut for "available";
+* away -- user is away;
+* xa -- user is extended away;
+* dnd -- user doesn't want to be disturbed;
+* chat -- user is free for chat.
+
+Note that there's currently no support for "unavailable"
+presence.
+
+The special value of the presence field is "clearstatus"
+("clear" is a shortcut to it). When spceified, the status
+message is set to the empty string; the presence itself isn't
+changed. (See also section "Notes" below.)
+
+The status message field may be used to provide status message
+for the presence. Any text, on a new line after the command (and
+the presence value, if specified) is treated as the status
+message, so it can span multiple lines and have empty lines in
+between. The only transformation that is applied to the status
+message is removal of any leading and trailing whitespace.
+
+Any of this fields both) may be omitted. In this case
+the current value for the omitted field is kept intact.
+
+III. Examples:
+
+Set the "do not disturb" master presence:
+/presence dnd
+
+Set the "free to chat" presence with a fancy status message:
+/presence chat
+Hey girls!
+
+Just change the status message while keeping the presence
+intact:
+/presence
+To be, or not to be --
+That is the question.
+
+Send directed presence to the chat peer (or to the room you're
+in):
+/chatpresence xa
+Gone shopping
+
+Just change the status message seen by the chat peer (or in the
+room):
+/thispresence
+Gone nuts emerging ebuilds
+
+IV. Notes.
+
+1. You should understand that directed presence is somewhat odd
+in its behaviour to many (not to say most) users: any change in
+master presence invalidates any directed presences which were
+set before. In other words if you set, say, "dnd" presence in
+some MUC room and then change your master presence to "chat",
+this one will be broadcasted to that room also changing your
+presence there to "chat".
+
+2. Oddly enough, but currently there's no easy way in Tkabber to
+sent *really* empty status message: if Tkabber is told to send
+one it replaces it with the "canonical" spelling of the presence
+being set in your locale. I.e. when you set the available
+presence with the empty status message and have an English
+locale, Tkabber will cook the "Available" status message for
+you. This is done so that presence stanzas can be PGP-signed, if
+PGP encryption is enabled.
+
+V. References:
+
+1. http://www.xmpp.org/rfcs/rfc3921.html#presence
+2. http://www.xmpp.org/rfcs/rfc3921.html#presence-resp-directed
+
+vim:et:ts=4:sw=4:tw=64

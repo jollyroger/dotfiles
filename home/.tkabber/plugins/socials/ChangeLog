@@ -1,0 +1,12 @@
+2005-03-17  Alexey Shchepin  <alexey@sevcom.net>
+
+	* socials.tcl: Bugfix
+
+2003-12-03  Alexey Shchepin  <alexey@sevcom.net>
+
+	* socials.tcl: Bugfix (thanks to Sergei Golovan)
+
+2003-05-29  Alexey Shchepin  <alexey@sevcom.net>
+
+	* socials.tcl: Now socials work in private chats
+

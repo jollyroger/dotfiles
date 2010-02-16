@@ -1,0 +1,8 @@
+::msgcat::mcset ro "Whiteboard" "Tablă"
+::msgcat::mcset ro "%s whiteboard" "Table %s"
+::msgcat::mcset ro "PolyLine" "Linie poligonală"
+::msgcat::mcset ro "FreeHand" "Mână liberă"
+::msgcat::mcset ro "Move" "Mută"
+#::msgcat::mcset ro "Remove" "Şterge"
+::msgcat::mcset ro "Clear" "Şterge tot"
+::msgcat::mcset ro "Color" "Culoare"

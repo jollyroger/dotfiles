@@ -1,0 +1,15 @@
+
+::msgcat::mcset uk "Alert when available" "Сповіщати коли доступний"
+::msgcat::mcset uk "Cancel" "Відмінити"
+::msgcat::mcset uk "File to log Spy Presence messages." "Файл протоколу для повідомлень шпигуна."
+::msgcat::mcset uk "Format of timestamp in Spy Presence window." "Формат дати/часу у вікні шпигуна."
+::msgcat::mcset uk "Open chat" "Відкрити розмову"
+::msgcat::mcset uk "Plugins options." "Параметри плагінів."
+::msgcat::mcset uk "Presence Spy" "Шпигун"
+::msgcat::mcset uk "Remove" "Видалити"
+::msgcat::mcset uk "Set watch" "Установити нагляд"
+::msgcat::mcset uk "Spy Alert: user %s (%s) is available!" "Сповіщення від шпигуна: користувач %s (%s) доступний"
+::msgcat::mcset uk "Spy Presence plugin options." "Параметри плагіна Spy Presence."
+::msgcat::mcset uk "Spy presence" "Шпигувати за присутністю"
+::msgcat::mcset uk "Spy" "Шпигун"
+

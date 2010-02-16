@@ -1,0 +1,48 @@
+2006-05-27  Alexey Shchepin  <alexey@sevcom.net>
+
+	* whiteboard.tcl: Updated interface, bugfix (thanks to Sergei
+	Golovan)
+
+	* msgs/ru.msg: Updated (thanks to Sergei Golovan)
+
+2006-04-27  Alexey Shchepin  <alexey@sevcom.net>
+
+	* msgs/ru.msg: Updated (thanks to Sergei Golovan)
+
+2006-01-20  Alexey Shchepin  <alexey@sevcom.net>
+
+	* whiteboard.tcl: Updated (thanks to Sergei Golovan)
+
+2005-08-14  Alexey Shchepin  <alexey@sevcom.net>
+
+	* msgs/nl.msg: Updated (thanks to Sander Devrieze)
+
+2004-07-17  Alexey Shchepin  <alexey@sevcom.net>
+
+	* msgs/nl.msg: Dutch translation (thanks to Sander Devrieze)
+
+2004-03-22  Alexey Shchepin  <alexey@sevcom.net>
+
+	* svgrender.tcl: Extended the parsing of point-lists to match SVG
+	spec, extended proc parse_text to use new proc text_opts (thanks
+	to Jeff Silver)
+
+	* whiteboard.tcl: Enhanced uniqueness of object ID, added "Text"
+	tool with color and font configuration, bugfix in wb::send_clear,
+	removed the code that put commas in x,y pairs in lists of points,
+	changed line join style in freehand from 'miter' to 'round'
+	(thanks to Jeff Silver)
+
+2004-01-05  Alexey Shchepin  <alexey@sevcom.net>
+
+	* whiteboard.tcl (wb::add_roster_menu_item): Updated to latest
+	tkabber cvs version
+
+2003-09-01  Alexey Shchepin  <alexey@sevcom.net>
+
+	* whiteboard.tcl: Bugfixes
+
+2003-05-29  Alexey Shchepin  <alexey@sevcom.net>
+
+	* whiteboard.tcl: Support for private whiteboard
+

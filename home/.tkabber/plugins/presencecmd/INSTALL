@@ -1,0 +1,9 @@
+As usually, copy this directory under the ~/.tkabber/plugins directory
+so that you get a hierarchy like this:
+  ~/.tkabber/plugins
+  ~/.tkabber/plugins/presencecmd/
+  ~/.tkabber/plugins/presencecmdv/presencecmd.tcl
+
+Restart Tkabber, to get the plugin loaded.
+Consult the README file for the details about using this plugin.
+

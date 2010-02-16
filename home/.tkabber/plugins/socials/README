@@ -1,0 +1,6 @@
+Socials Tkabber plugin -- add many "social" commands like "/dance" that used in
+Rom and Aladon MUDs.
+
+To install, copy socials/ directory to $HOME/.tkabber/plugins (on UNIX),
+to %APPDATA%\Tkabber\plugins (on Windows),
+or to $HOME/Library/Application Support/Tkabber (on MacOS X).
