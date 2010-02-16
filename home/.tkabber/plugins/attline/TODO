@@ -1,0 +1,10 @@
+$Id: TODO 1313 2007-11-14 18:43:51Z sergei $
+
+* Remove att. line when a buffer marked as read loses focus
+  instead of moving it to the bottom may be?
+
+* Calculation of line width isn't quite correct: left padding
+  seems to be more than right.
+
+* Check whether the att. line can be made even thinner.
+

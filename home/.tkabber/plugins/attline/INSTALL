@@ -1,0 +1,11 @@
+As usually, copy this directory under the ~/.tkabber/plugins directory
+so that you get a hierarchy like this:
+  ~/.tkabber/plugins
+  ~/.tkabber/plugins/attline/
+  ~/.tkabber/plugins/attline/attline.tcl
+
+Restart Tkabber, to get the plugin loaded.
+Visit the Tkabber->Customize->Chat->Attention Line
+block of settings, customize as you wish.
+Consult the README file for the details about using this plugin.
+

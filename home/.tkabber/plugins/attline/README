@@ -1,0 +1,138 @@
+$Id: README 1313 2007-11-14 18:43:51Z sergei $
+"Attention line" -- chat plugin for Tkabber.
+
+
+I. The idea
+
+This plugin helps to track discussion flow in high-volume chats
+by remembering the last message you have read in each chat
+window when you're leaving it and drawing a horizontal line just
+below that message when you return back to that chat window.
+This line is called the "attention line" since its task is to
+draw your attention to the point at which you stopped to attend
+the chat when you're back.
+
+"Leaving of the chat window" described above applies not only to
+the physical top-level chat windows in windowed mode but
+also to switching between chat tabs in tabbed mode. In tabbed
+mode leaving the main window is also considered as leaving the
+currently active chat tab, if any. So everywhere in this
+document, when you see "chat window" you can safely interpret it
+as "chat tab" if you're using tabbed mode in Tkabber.
+
+
+II. Usage
+
+The behaviour of the attention line is governed by its
+"expiration timeout". When you switch to a chat window and the
+chat log in that window contains unread messages, expiration
+line is placed just below the last read message. At that time
+the attention line expiration timer starts to tick. If you leave
+the chat window again until the timeout expires, the attention
+line is left intact as if you haven't switched to that window at
+all. Otherwise, if the timeout expires while you're in this chat
+window its attention line is considered "expired" and the chat
+log is considered as read. Normally the attention line doesn't
+do anything when it expires but you can make it disappear, if
+you so like (see the "Configuration" section below). When you
+leave the chat window with expired attention line and then
+switch back to it later the attention line will be placed just
+above the first message arrived while you haven't attending that
+chat window and the expiration timer starts again.
+
+The expiration timeout is configurable and can be disabled.
+
+If it's still not quite clear, you can consider this "expiration
+timeout" as "time to read", i.e. the time which must tick before
+the chat window you're currently attending is considered "read"
+(by you).
+
+When the chat window is active and its attention line is expired
+any new messages arriving in this chat are considered "read"
+immediately and doesn't affect the attention line.
+
+Chat input window is given one special Tk virtual event [1]
+named <<ChatSeeAttentionLine>> which is unbound by default but
+can be bound [2] to any Tk event (usually, a keyboard shortcut)
+and then used to move the chat log viewport to the place where
+the attention line is currently located.
+
+
+III. Configuration.
+
+You can configure the behavior of the attention line via
+Tkabber's Customize mechanism and its visual appearance via Tk
+option database [3].
+
+Configuration parameters are available in the
+"Chat" -> "Attention Line" group of Customize settings (which
+are accessible via the "Tkabber" -> "Customize" main menu entry.
+There are two options to configure:
+
+* ::plugins::attline::options(expires_after) -- sets the
+  attention line expiration timeout (in milliseconds). If set
+  to 0 or a negative value attention line is considered expired
+  right after you switch to a chat window it's placed in.
+  The default value is 1000.
+
+* ::plugins::attline::options(remove_expired) -- when set, makes
+  the attention line disappear when it's expired. (Note that
+  when attention line is removed the text in the chat window is
+  shifted to fill the gap which may be visually disturbing.)
+  This flag is off by default.
+
+There's almost no sense to use removal of expired attention line
+along with its immediate expiration.
+
+Visual appearance is controlled by a set of Tk option database
+parameters:
+
+* Chat.attentionLineHeight -- controls the thickness (in pixels)
+  of the attention line. (Note that some amount of white space
+  is added above and below the attention line by the text widget
+  which draws the attention line.)
+  The default value is 1.
+ 
+* Chat.attentionLineColor -- color of the attention line. Can
+  be specified in any form described in [4].
+  The default value is "red".
+
+* Chat.attentionLinePadX -- amount of extra white space to pad
+  the attention line from left and right.
+  The default value is 5.
+
+* Chat.attentionLinePadY -- amount of extra white space to pad
+  the attention line above and below.
+  The default value is 0.
+
+Example:
+
+# Expire attention line after 5 seconds of attending
+# the chat window:
+set ::plugins::attline::options(expires_after) 5000
+
+# Make attention line green-coloured:
+option add *Chat.attentionLineColor green
+
+
+IV. Limitations.
+
+The attention line mechanism doesn't take into account the
+actual number of unread messages that exist in the chat window
+when you switch into it: after the expiration timeout is over
+the chat window is considered read no matter whether you have
+actually seen any unread messages. You can use the "chat
+bookmarks" builtin facility to attach a bookmark to any message
+in a chat window (this action can be accessed from the context
+menu of the widget that renders chat messages).
+
+
+V. Links
+
+1. http://www.tcl.tk/man/tcl8.4/TkCmd/event.htm
+2. http://www.tcl.tk/man/tcl8.4/TkCmd/bind.htm
+3. http://www.tcl.tk/man/tcl8.4/TkCmd/option.htm
+4. http://www.tcl.tk/man/tcl8.4/TkLib/GetColor.htm
+
+
+# vim:tw=64:noet

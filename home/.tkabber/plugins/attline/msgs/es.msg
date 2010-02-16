@@ -1,0 +1,4 @@
+::msgcat::mcset es "Attention Line chat plugin options. This plugin draws horizontal line separating read and unread messages in chat windows." "Opciones del plugin de charla Attention Line. Este plugin dibuja una línea horizontal que separa los mensajes viejos leídos de los nuevos mensajes aún no leídos en la ventana de charla."
+::msgcat::mcset es "Plugins options." "Opciones de plugins."
+::msgcat::mcset es "Remove the attention line after it was expired from its chat window." "Borra la línea de atención de la ventana de charla cuando expire."
+::msgcat::mcset es "Time (in milliseconds) after which unread messages in the currently active chat window are considered read and the attention line is considered expired." "Tiempo (en milisegundos) desde que un mensaje no leído en la ventana de charla activa se considera leído y se borra la línea de atención se considera expirada."
