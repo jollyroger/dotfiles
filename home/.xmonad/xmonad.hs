@@ -1,4 +1,4 @@
-Rmport XMonad hiding ( (|||) )
+import XMonad hiding ( (|||) )
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
@@ -16,18 +16,27 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.DwmStyle
 import XMonad.Layout.Circle
 import XMonad.Layout.Named
+import XMonad.Layout.Reflect
+import XMonad.Layout.IM
 import XMonad.Layout.LayoutCombinators
+
+-- libraries for Java workaround
+import XMonad.Hooks.SetWMName
 
 myLayouts = named "dwmtiled" tiled ||| 
 	named "mirror" (Mirror tiled) ||| 
 	named "full" Full ||| 
 	named "circle" Circle ||| 
-	named "tabbed" simpleTabbedBottom
+	named "tabbed" simpleTabbedBottom |||
+    named "gimp" gimpLayout
     where
         tiled   = Tall nmaster delta ratio
         nmaster = 1
         ratio   = 1/2
         delta   = 3/100
+        gimpLayout = withIM (0.2) (Role "gimp-toolbox" ) $
+            reflectHoriz $
+            withIM (0.3) (Role "gimp-dock") Full
 
 ignoreWindows = [ 
 	className =? "trayer" --> doIgnore
@@ -68,6 +77,7 @@ xmproc <- spawnPipe ("xmobar")
 xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig { 
 	terminal = "x-terminal-emulator"
 	, manageHook = myManageHook
+    , startupHook = setWMName "LG3D"
 	, layoutHook = smartBorders $  avoidStruts $ myLayouts
 	, logHook = dynamicLogWithPP $ xmobarPP { 
 		ppOutput = hPutStrLn xmproc
