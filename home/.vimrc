@@ -19,13 +19,16 @@ set showcmd
 " Show line numbers
 set number
 
+" Set Leader
+let mapleader=","
+
 " Show editing line (mostly not needed if cursor is highlighted)
 "set cul
 
 " Disabling bell
-set visualbell
+set novisualbell
 
-" Set 256 colour support 
+" Set 256 colour support
 set t_Co=256
 
 " ------------------------------------------------------------------------------
@@ -49,7 +52,7 @@ set softtabstop=4
 set tabstop=4
 
 " Text width and word wrap
-set textwidth=80
+set textwidth=79
 
 " ------------------------------------------------------------------------------
 " Search properties
@@ -61,19 +64,24 @@ set incsearch
 " Disabling search highlighting, it's obvious
 set nohlsearch
 
+" Keep a longer history
+set history=1000
+
 " Mouse support
 set mouse=a
 set mousemodel=popup
 set mousehide
 
+" Maintain more context around cursor
+set scrolloff=3
 " ------------------------------------------------------------------------------
 " Work with buffers, tabs, etc
 " ------------------------------------------------------------------------------
 
 "Work with tabs instead of buffers
-nmap :bn :tabNext
-nmap :bp :tabprevious
-nmap :e :tabnew
+"nmap :bn :tabNext
+"nmap :bp :tabprevious
+"nmap :e :tabnew
 "nmap :badd :tabnew
 "nmap :bc :tabc
 
@@ -82,6 +90,17 @@ set termencoding=utf-8
 
 " Do not destroy buffer when switching to next file
 set hidden
+
+" Set the backupdir where all the swap/backup files will be stored
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" ------------------------------------------------------------------------------
+" Space characters
+" ------------------------------------------------------------------------------
+set listchars=tab:>-,trail:·,eol:$,nbsp:•
+nmap <silent> <leader>s :set nolist!<CR>
+
 
 " ------------------------------------------------------------------------------
 " Syntax highlighting options, filetype auto-detection
@@ -159,9 +178,11 @@ imap <F12> <esc>:Ex<cr>i
 vmap < <gv
 vmap > >gv
 
+command W w !sudo tee % > /dev/null
+
 colorscheme desert256
 au BufRead,BufNewFile */nginx/nginx.conf set ft=nginx
 au BufRead,BufNewFile */nginx/sites-*/* set ft=nginx
 au BufRead,BufNewFile */nginx/conf/* set ft=nginx
 au BufRead,BufNewFile */nginx/conf.d/* set ft=nginx
-set runtimepath+=/usr/share/lilypond/2.12.2/vim
+set runtimepath+=/usr/share/lilypond/2.*/vim
