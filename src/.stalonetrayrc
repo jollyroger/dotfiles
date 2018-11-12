@@ -1,0 +1,10 @@
+geometry 10x1+1760+0 
+max_geometry 10x1
+icon_size 16
+background black
+icon_gravity NE
+grow_gravity W
+decorations none
+skip_taskbar
+background black
+transparent false

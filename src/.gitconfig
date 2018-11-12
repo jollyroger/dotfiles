@@ -1,0 +1,18 @@
+[user]
+	name = "Andrii Senkovych"
+	email = andrii@senkovych.com
+[alias]
+	stat = shortlog -sne
+[core]
+	editor = vim
+[push]
+	default = simple
+[merge]
+	tool = vimdiff
+[mergetool]
+	keepBackup = false
+[diff]
+	tool = vimdiff
+[color]
+    ui = auto
+	pager = true

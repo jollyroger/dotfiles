@@ -1,0 +1,25 @@
+BUILDPLACE=/var/cache/pbuilder/build/
+USEPROC=yes
+USEDEVPTS=yes
+USEDEVFS=no
+BUILDRESULT=/var/cache/pbuilder/result/
+APTCACHE="/var/cache/pbuilder/aptcache/"
+REMOVEPACKAGES=""
+HOOKDIR=""
+export DEBIAN_FRONTEND="noninteractive"
+DEBEMAIL="Andrii Senkovych <andrii@senkovych.com>"
+BUILDSOURCEROOTCMD="fakeroot"
+PBUILDERROOTCMD="sudo"
+DEBBUILDOPTS=""
+APTCONFDIR=""
+BUILDUSERID=1000
+BUILDUSERNAME=jollyroger
+export LOGNAME=jollyroger
+BINDMOUNTS="/home"
+OTHERMIRROR=""
+unset DEBOOTSTRAPOPTS
+export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
+export SHELL=/bin/bash
+DEBOOTSTRAP="cdebootstrap"
+PKGNAME_LOGFILE_EXTENTION="_$(dpkg --print-architecture).build"
+

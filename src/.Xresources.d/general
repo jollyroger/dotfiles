@@ -1,0 +1,12 @@
+! Xft settings
+Xft.dpi: 96.0
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.antialias: true
+Xft.rgba: none
+
+! Default font for any basic X client
+*Font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1, \
+    xft:DejaVu Sans Mono
+*font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
+    xft:DejaVu Sans Mono

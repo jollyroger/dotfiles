@@ -1,0 +1,7 @@
+! Tkabber font settings
+*Chat*Text.font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
+*Roster*font:    -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
+
+! Tkabber settings
+*mainRosterWidth: 200
+*TkTheme: clam

@@ -1,0 +1,52 @@
+! URxvt settings
+URxvt*font:     xft:DejaVu Sans Mono for Powerline:style=Book,pixelsize=15:antialias=true:hinting=true
+URxvt*boldFont:
+                
+URxvt*letterSpace: -1
+
+URxvt*iconFile: /usr/share/pixmaps/urxvt_32x32.xpm
+!URxvt.depth: 32
+!URxvt.background: rgba:0000/0000/0000/eeee
+!URxvt.background: #000000
+!URxvt.foreground: #AFB8FA
+!URxvt.fading: 10  
+!URxvt.fadeColor: #666666
+!URxvt.shading: 0
+!URxvt.transparent: false
+!URxvt.tintColor: #3F3F3F
+
+URxvt.scrollTtyOutput: false
+URxvt.scrollstyle: plain
+URxvt.scrollColor: #C9BD9A
+URxvt.troughColor: #000000
+URxvt.scrollBar: true
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: false
+
+URxvt.cursorBlink: true
+
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
+URxvt.borderLess: false
+
+!URxvt.insecure: true
+
+URxvt.urgentOnBell: true
+
+URxvt.saveLines: 65535
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!URxvt.perl-ext-common: default,tabbed,matcher
+
+! Xterm keys simulation
+URxvt.keysym.C-Prior: \033[5;5~
+URxvt.keysym.C-Next:  \033[6;5~
+URxvt.keysym.C-Left:  \033[1;5D
+URxvt.keysym.C-Right: \033[1;5C
+URxvt.keysym.C-Up:    \033[1;5A
+URxvt.keysym.C-Down:  \033[1;5B
+
+! Required for use with solarized color theme
+URxvt.intensityStyles: false
