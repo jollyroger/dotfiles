@@ -11,8 +11,22 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'vim-airline/vim-airline'
 
-
 Plug 'altercation/vim-colors-solarized'
+
+
+Plug 'saltstack/salt-vim'
+" Override default yaml syntax file to a faster but simpler one
+Plug 'stephpy/vim-yaml'
+" Add full Jinja2 support
+Plug 'lepture/vim-jinja'
+
+
+" Better Nginx syntax highlighting for vim
+Plug 'chr4/nginx.vim'
+
+
+" Syntax support for ansible
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
