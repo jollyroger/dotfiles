@@ -16,6 +16,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 [ -d /usr/lib/ccache ] && export PATH=/usr/lib/ccache:$PATH
+[ -f ~/.dir_colors ] && eval $(dircolors ~/.dir_colors)
  
 setopt HIST_VERIFY 		# Show command from history before actually execute it
 setopt APPEND_HISTORY 		# Append history to the end of the history file
