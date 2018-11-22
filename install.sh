@@ -56,7 +56,7 @@ $TMP_FONTS_DIR/install.sh
 rm -rf $TMP_FONTS_DIR
 }
 
-install_vim_powerline() {
+install_vim_plug() {
     curl -fLo src/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
