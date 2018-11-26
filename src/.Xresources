@@ -1,4 +1,4 @@
-!#include ".Xresources.d/general"
-!#include ".Xresources.d/tkabber"
+#include ".Xresources.d/general"
+#include ".Xresources.d/tkabber"
 #include ".Xresources.d/urxvt"
 #include ".Xresources.d/solarized-dark"
