@@ -83,7 +83,7 @@ case "${TERM}" in
     bindkey '\e[1~'   beginning-of-line   # home
     bindkey '\e[4~'   end-of-line         # end
     ;;
-  screen)
+  screen*)
     bindkey '^[[1~'   beginning-of-line   # home
     bindkey '^[[4~'   end-of-line         # end
     bindkey '\e[3~'   delete-char         # delete
