@@ -1,15 +1,21 @@
 ! URxvt settings
-URxvt*font:     xft:DejaVu Sans Mono for Powerline:style=Book,pixelsize=15:antialias=true:hinting=true
+
+
+! Fonts section. Please install `fonts-powerline` and `fonts-hack` beforehand.
+URxvt*font: xft:Hack:pixelsize=14:antialias=true:hinting=true, \
+            xft:PowerlineSymbols:pixelsize=8:antialias=true:hinting=true
 URxvt*boldFont:
-                
 URxvt*letterSpace: -1
+
+! My previous font:
+!URxvt.font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
 
 URxvt*iconFile: /usr/share/pixmaps/urxvt_32x32.xpm
 !URxvt.depth: 32
 !URxvt.background: rgba:0000/0000/0000/eeee
 !URxvt.background: #000000
 !URxvt.foreground: #AFB8FA
-!URxvt.fading: 10  
+!URxvt.fading: 10
 !URxvt.fadeColor: #666666
 !URxvt.shading: 0
 !URxvt.transparent: false
@@ -29,18 +35,21 @@ URxvt.internalBorder: 0
 URxvt.externalBorder: 0
 URxvt.borderLess: false
 
-!URxvt.insecure: true
-
 URxvt.urgentOnBell: true
 
 URxvt.saveLines: 65535
 
+! Disable keycap picture insert mode when pressing Ctrl+Shift to be able to use
+! key bindings with these keys
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-!URxvt.perl-ext-common: default,tabbed,matcher
 
-! Xterm keys simulation
+! Use some handy perl extensions
+URxvt.perl-ext-common: default,font-size,matcher
+
+
+! Xterm keys simulation to make Vim navigation work with arrows too.
 URxvt.keysym.C-Prior: \033[5;5~
 URxvt.keysym.C-Next:  \033[6;5~
 URxvt.keysym.C-Left:  \033[1;5D
