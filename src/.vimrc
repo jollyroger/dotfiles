@@ -6,6 +6,8 @@
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-fugitive'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -14,19 +16,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 
 
+" Syntax highlighting
+
 Plug 'saltstack/salt-vim'
-" Override default yaml syntax file to a faster but simpler one
-Plug 'stephpy/vim-yaml'
-" Add full Jinja2 support
-Plug 'lepture/vim-jinja'
-
-
-" Better Nginx syntax highlighting for vim
-Plug 'chr4/nginx.vim'
-
-
-" Syntax support for ansible
+Plug 'stephpy/vim-yaml'  " Override default yaml syntax with a faster/simpler
+Plug 'lepture/vim-jinja' " Add full Jinja2 support
+Plug 'chr4/nginx.vim'    " Better Nginx syntax highlighting for vim
 Plug 'pearofducks/ansible-vim'
+Plug 'ledger/vim-ledger'
 
 call plug#end()
 

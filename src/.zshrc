@@ -17,14 +17,14 @@ SAVEHIST=10000
 
 [ -d /usr/lib/ccache ] && export PATH=/usr/lib/ccache:$PATH
 [ -f ~/.dir_colors ] && eval $(dircolors ~/.dir_colors)
- 
-setopt HIST_VERIFY 		# Show command from history before actually execute it
-setopt APPEND_HISTORY 		# Append history to the end of the history file
-setopt HIST_EXPIRE_DUPS_FIRST 	# Remove duplicated events when histfile is overfilled
-setopt HIST_FIND_NO_DUPS 	# Do not show history duplicates while search
-setopt HIST_REDUCE_BLANKS 	# Reduce unncessary blanks before putting event to history
-setopt HIST_NO_STORE 		# Do not store history invoking commands in history
-setopt HIST_IGNORE_SPACE	# Do not put event started with space to history
+
+setopt HIST_VERIFY            # Show command from history before actually execute it
+setopt APPEND_HISTORY         # Append history to the end of the history file
+setopt HIST_EXPIRE_DUPS_FIRST # Remove duplicated events when histfile is overfilled
+setopt HIST_FIND_NO_DUPS      # Do not show history duplicates while search
+setopt HIST_REDUCE_BLANKS     # Reduce unncessary blanks before putting event to history
+setopt HIST_NO_STORE          # Do not store history invoking commands in history
+setopt HIST_IGNORE_SPACE      # Do not put event started with space to history
 
 # Basic options
 unsetopt beep
@@ -42,6 +42,8 @@ alias grep='grep --color'
 alias timidity='timidity -in'
 alias salt-summary='salt --state-verbose=False'
 alias salt-short='salt --state-output=changes'
+alias midiplay="fluidsynth -a alsa -m alsa_seq -l -i /usr/share/sounds/sf2/FluidR3_GM.sf2"
+alias pmount="pmount -A"
 
 # Propmt settings
 export PROMPT='[%n@%m:%c]%# '
@@ -55,8 +57,8 @@ export MAIL=/var/mail/$USER
 
 case "${TERM}" in
   cons25*|linux) # plain BSD/Linux console
-    bindkey '\e[H'    beginning-of-line   # home 
-    bindkey '\e[F'    end-of-line         # end  
+    bindkey '\e[H'    beginning-of-line   # home
+    bindkey '\e[F'    end-of-line         # end
     bindkey '\e[5~'   delete-char         # delete
     bindkey '[D'      emacs-backward-word # esc left
     bindkey '[C'      emacs-forward-word  # esc right
@@ -65,9 +67,9 @@ case "${TERM}" in
     bindkey '\e[3~'   delete-char         # delete
     bindkey '\eOc'    forward-word        # ctrl right
     bindkey '\eOd'    backward-word       # ctrl left
-    # workaround for screen + urxvt
     bindkey '\e[7~'   beginning-of-line   # home
     bindkey '\e[8~'   end-of-line         # end
+    # workaround for screen + urxvt
     bindkey '^[[1~'   beginning-of-line   # home
     bindkey '^[[4~'   end-of-line         # end
     ;;
@@ -92,14 +94,14 @@ case "${TERM}" in
     ;;
 esac
 
+bindkey '\E[5~'   history-beginning-search-backward # PgUp
+bindkey '\E[6~'   history-beginning-search-forward  # PgDown
+
 # Debian-specific variables
 export DEBFULLNAME="Andrii Senkovych"
 export DEBEMAIL="andrii@senkovych.com"
 export QUILT_REFRESH_ARGS="-p ab --no-timestamps --no-index"
 export QUILT_PATCHES=debian/patches
-
-alias midiplay="fluidsynth -a alsa -m alsa_seq -l -i /usr/share/sounds/sf2/FluidR3_GM.sf2"
-alias pmount="pmount -A"
 
 export AWS_CONFIG_FILE=~/.awsrc
 

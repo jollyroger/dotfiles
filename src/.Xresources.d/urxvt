@@ -49,13 +49,13 @@ URxvt.iso14755_52: false
 URxvt.perl-ext-common: default,font-size,matcher
 
 
-! Xterm keys simulation to make Vim navigation work with arrows too.
-URxvt.keysym.C-Prior: \033[5;5~
-URxvt.keysym.C-Next:  \033[6;5~
-URxvt.keysym.C-Left:  \033[1;5D
-URxvt.keysym.C-Right: \033[1;5C
-URxvt.keysym.C-Up:    \033[1;5A
-URxvt.keysym.C-Down:  \033[1;5B
+!! Xterm keys simulation to make Vim navigation work with arrows too.
+!URxvt.keysym.C-Prior: \033[5;5~
+!URxvt.keysym.C-Next:  \033[6;5~
+!URxvt.keysym.C-Left:  \033[1;5D
+!URxvt.keysym.C-Right: \033[1;5C
+!URxvt.keysym.C-Up:    \033[1;5A
+!URxvt.keysym.C-Down:  \033[1;5B
 
 ! Required for use with solarized color theme
 URxvt.intensityStyles: false

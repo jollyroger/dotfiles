@@ -105,7 +105,7 @@ xmonad $ withUrgencyHook NoUrgencyHook $ def {
         , startupHook = setWMName "LG3D"
         , layoutHook = smartBorders $  avoidStruts $ myLayouts
         , handleEventHook = myHandleEventHook
-        , logHook = dynamicLogWithPP $ xmobarPP { 
+        , logHook = dynamicLogWithPP $ xmobarPP {
                 ppOutput = hPutStrLn xmproc
                 , ppTitle = xmobarColor "green" "" . shorten 50
         }
