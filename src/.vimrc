@@ -61,7 +61,7 @@ set number
 let mapleader=","
 
 " Show editing line (mostly not needed if cursor is highlighted)
-"set cul
+set cul
 
 " Disabling bell
 set novisualbell
@@ -82,7 +82,7 @@ set autoindent
 
 " Enable ``smart'' indentation
 set smartindent
-	
+
 " Tabulation properties (use spaces instead of tabs)
 set smarttab
 set expandtab
@@ -120,13 +120,6 @@ set scrolloff=3
 " Work with buffers, tabs, etc
 " ------------------------------------------------------------------------------
 
-"Work with tabs instead of buffers
-nmap :bn :tabNext
-nmap :bp :tabprevious
-nmap :e :tabnew
-nmap :badd :tabnew
-nmap :bc :tabc
-
 " Default terminal encoding
 set termencoding=utf-8
 
@@ -136,6 +129,7 @@ set hidden
 " Set the backupdir where all the swap/backup files will be stored
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
 
 " ------------------------------------------------------------------------------
 " Space characters
