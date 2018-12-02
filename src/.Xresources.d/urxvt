@@ -1,13 +1,13 @@
 ! URxvt settings
 
 
-! Fonts section. Please install `fonts-powerline` and `fonts-hack` beforehand.
+!! Fonts section. Please install `fonts-powerline` and `fonts-hack` beforehand.
 URxvt*font: xft:Hack:pixelsize=14:antialias=true:hinting=true, \
             xft:PowerlineSymbols:pixelsize=8:antialias=true:hinting=true
 URxvt*boldFont:
 URxvt*letterSpace: -1
 
-! My previous font:
+!! My previous font:
 !URxvt.font: -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
 
 URxvt*iconFile: /usr/share/pixmaps/urxvt_32x32.xpm
@@ -29,6 +29,12 @@ URxvt.scrollBar: true
 URxvt.scrollBar_right: false
 URxvt.scrollBar_floating: false
 
+!! For more consistent work with tmux this should be 0, otherwise you will end
+!! up scrolling into previous screen data. This also efectively ruins history
+!! search feature of urxvt. You should be using tmux history instead. For more
+!! general cases set this to something like 65536.
+URxvt.saveLines: 0
+
 URxvt.cursorBlink: true
 
 URxvt.internalBorder: 0
@@ -37,16 +43,15 @@ URxvt.borderLess: false
 
 URxvt.urgentOnBell: true
 
-URxvt.saveLines: 65535
 
-! Disable keycap picture insert mode when pressing Ctrl+Shift to be able to use
-! key bindings with these keys
+!! Disable keycap picture insert mode when pressing Ctrl+Shift to be able to use
+!! key bindings with these keys
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 
-! Use some handy perl extensions
-URxvt.perl-ext-common: default,font-size,matcher
+!! Use some handy perl extensions
+URxvt.perl-ext-common: default,font-size,matcher,52-osc
 
 
 !! Xterm keys simulation to make Vim navigation work with arrows too.
