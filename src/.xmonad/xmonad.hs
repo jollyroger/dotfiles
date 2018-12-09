@@ -100,7 +100,7 @@ home <- getEnv "HOME"
 xmproc <- spawnPipe ("xmobar")
 
 xmonad $ withUrgencyHook NoUrgencyHook $ def {
-        terminal = "/usr/bin/urxvt -e /usr/bin/tmux -2"
+        terminal = "/usr/bin/urxvt -e /usr/bin/tmux"
         , manageHook = myManageHook
         , startupHook = setWMName "LG3D"
         , layoutHook = smartBorders $  avoidStruts $ myLayouts
