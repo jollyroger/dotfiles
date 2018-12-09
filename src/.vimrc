@@ -24,6 +24,7 @@ Plug 'lepture/vim-jinja' " Add full Jinja2 support
 Plug 'chr4/nginx.vim'    " Better Nginx syntax highlighting for vim
 Plug 'pearofducks/ansible-vim'
 Plug 'ledger/vim-ledger'
+Plug 'gisraptor/vim-lilypond-integrator'
 
 call plug#end()
 
