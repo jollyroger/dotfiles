@@ -4,7 +4,7 @@ REPO_DIR=$(dirname $(readlink -f "$0"))
 cd "$REPO_DIR"
 
 install_dotfiles() {
-    stow $* -Svt $HOME "$REPO_DIR/src"
+    ls --color=none packages | xargs stow -vt $HOME -d packages
 }
 
 
@@ -53,17 +53,17 @@ install_global_deps() {
         fonts-powerline \
         fonts-hack \
         stow \
+        curl \
         git
     ln -s /usr/share/doc/pass/examples/dmenu/passmenu ~/.bin/passmenu
 }
 
 install_vim_plugins() {
-    curl -fLo $REPO_DIR/src/.vim/autoload/plug.vim --create-dirs \
+    curl -fLo $REPO_DIR/packages/vim/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim +PlugInstall +qa
 }
 
-backup
 install_global_deps
 install_vim_plugins
 install_dotfiles
