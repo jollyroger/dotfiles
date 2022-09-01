@@ -18,13 +18,15 @@ Plug 'altercation/vim-colors-solarized'
 
 " Syntax highlighting
 
-Plug 'saltstack/salt-vim'
-Plug 'stephpy/vim-yaml'  " Override default yaml syntax with a faster/simpler
+Plug 'Yggdroot/indentLine'
+"Plug 'stephpy/vim-yaml'  " Override default yaml syntax with a faster/simpler
 Plug 'lepture/vim-jinja' " Add full Jinja2 support
 Plug 'chr4/nginx.vim'    " Better Nginx syntax highlighting for vim
 Plug 'pearofducks/ansible-vim'
+Plug 'hashivim/vim-terraform'
 Plug 'ledger/vim-ledger'
 Plug 'gisraptor/vim-lilypond-integrator'
+
 
 call plug#end()
 
@@ -135,6 +137,8 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set listchars=tab:>-,trail:·,eol:$,nbsp:•
 nmap <silent> <leader>s :set nolist!<CR>
 
+let g:vim_json_conceal=0
+let g:markdown_syntax_conceal=0
 
 " ------------------------------------------------------------------------------
 " Enable Syntax Formatting

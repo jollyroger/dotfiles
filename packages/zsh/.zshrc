@@ -33,12 +33,14 @@ unsetopt beep
 zstyle :compinstall filename '~/.zshrc'
 # expand s-a to sites-available
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:(ssh|scp|ftp|sftp):*' hosts $hosts
+
 autoload -Uz compinit && compinit
 autoload -U colors && colors
 
 # User aliases
-alias ls='ls --color'
-alias grep='grep --color'
+#alias ls='ls --color'
+#alias grep='grep --color'
 alias timidity='timidity -in'
 alias salt-summary='salt --state-verbose=False'
 alias salt-short='salt --state-output=changes'
@@ -103,9 +105,11 @@ export DEBEMAIL="andrii@senkovych.com"
 export QUILT_REFRESH_ARGS="-p ab --no-timestamps --no-index"
 export QUILT_PATCHES=debian/patches
 
-export AWS_CONFIG_FILE=~/.awsrc
-
 export GPG_TTY=$(tty)
 if [[ -n "$SSH_CONNECTION" ]] ;then
     export PINENTRY_USER_DATA="USE_CURSES=1"
 fi
+
+for _file in ~/.zshrc.d/*.sh ; do
+    source $_file
+done

@@ -3,17 +3,49 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , fgColor = "grey"
        , position = Static { xpos = 0, ypos = 0, width = 1760 , height = 16 }
        , lowerOnStart = True
-       , commands = [ Run Weather "UKKK" ["-t","<station>: <tempC>C","-L","10","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
-                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
-                    , Run MultiCpu ["-t","Cpu %: <autototal>","-L","3","-H","50","--normal","green","--high","red"] 10
+       , commands = [ Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run MultiCpu [
+                        "-t", "CPU: <autototal>",
+                        "-L", "3",
+                        "-H", "50",
+                        "--normal", "green",
+                        "--high", "red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Com "uname" ["-s","-r"] "" 36000
-                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-                    , Run CpuFreq [] 100
+                    , Run Network "wlp1s0" [
+                        "-L", "0",
+                        "-H", "32",
+                        "--normal", "green",
+                        "--high", "red"] 10
+                    , Run Brightness [
+                        "-t", "Brightness: <percent>%",
+                        "--",
+                        "-D", "intel_backlight"
+                        ] 10
+                    , Run CpuFreq [
+                        "-t", "GHz: <cpu0> <cpu1> <cpu2> <cpu3>",
+                        "-L", "0",
+                        "-H", "2",
+                        "-l", "lightblue",
+                        "-n","white",
+                        "-h", "red"
+                        ] 50
+                    , Run ThermalZone 0 ["-t", "Temp: <temp>°C"] 50
+                    , Run BatteryP ["BAT0"] ["-t", "<acstatus>"
+                        , "-L", "10", "-H", "80"
+                        , "-l", "red", "-h", "green"
+                        , "--", "-O", "Charging", "-o", "Battery: <left>%"
+                        ] 10
+                    , Run Weather "UKKK" [
+                        "-t", "<station>: <tempC>°C",
+                        "-L", "10" ,"-H", "25",
+                        "--normal", "green",
+                        "--high", "red",
+                        "--low", "lightblue"
+                        ] 36000
                     , Run StdinReader
-                    , Run Com "/home/jollyroger/.xmonad/scripts/thrm.sh" [] "thrm" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% | %multicpu% | %memory% | %eth0% | %thrm% | %cpufreq% }{ <fc=#ee9a00>%date%</fc>| %UKKK% "
+       , template = "%StdinReader% | %memory% | %wlp1s0% | %multicpu% | %thermal0% | %cpufreq% | %bright% | %battery% }\
+                    \{ <fc=#ee9a00>%date%</fc> | %UKKK% "
        }

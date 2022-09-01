@@ -62,7 +62,7 @@ manageHooks = [
         ]
 
 myShortcuts = [
-        ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
+        ((mod4Mask .|. shiftMask, xK_z), spawn "i3lock-fancy")
         , ((mod4Mask, xK_Print), spawn "scrot")
         , ((0, xK_Print), spawn "scrot -s")
         , ((mod4Mask, xK_s), spawn "passmenu")
