@@ -3,6 +3,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.EZConfig(additionalKeys)
 
 -- Pipes, environment variables, etc.
@@ -62,15 +63,17 @@ manageHooks = [
         ]
 
 myShortcuts = [
-        ((mod4Mask .|. shiftMask, xK_z), spawn "i3lock-fancy")
-        , ((mod4Mask, xK_Print), spawn "scrot")
-        , ((0, xK_Print), spawn "scrot -s")
-        , ((mod4Mask, xK_s), spawn "passmenu")
-        , ((mod4Mask, xK_d), sendMessage $ JumpToLayout "dwmtiled")
-        , ((mod4Mask, xK_m), sendMessage $ JumpToLayout "mirror")
-        , ((mod4Mask, xK_f), sendMessage $ JumpToLayout "full")
-        , ((mod4Mask, xK_b), sendMessage $ JumpToLayout "tabbed")
-        , ((mod4Mask, xK_c), sendMessage $ JumpToLayout "circle")
+        ("M-Z", spawn "i3lock-fancy")
+        , ("<XF86MonBrightnessUp>", spawn "xbacklight +5")
+        , ("<XF86MonBrightnessDown>", spawn "xbacklight -5")
+        , ("M-s", spawn "~/.bin/passmenu")
+        , ("M-d", sendMessage $ JumpToLayout "dwmtiled")
+        , ("M-m", sendMessage $ JumpToLayout "mirror")
+        , ("M-f", sendMessage $ JumpToLayout "full")
+        , ("M-b", sendMessage $ JumpToLayout "tabbed")
+        , ("M-c", sendMessage $ JumpToLayout "circle")
+--        , ((mod4Mask, xK_Print), spawn "scrot")
+--        , ((0, xK_Print), spawn "scrot -s")
         ]
 
 myWorkspaces :: [WorkspaceId]
@@ -91,6 +94,7 @@ moveWindows = [ className =? "tkabber" --> doShift "4:chat"
 
 myHandleEventHook = mconcat
         [ docksEventHook
+        , fullscreenEventHook
         , handleEventHook defaultConfig ]
 
 myManageHook = composeAll ( concat [manageHooks, ignoreWindows, floatWindows, moveWindows] )
@@ -99,7 +103,7 @@ main = do
 home <- getEnv "HOME"
 xmproc <- spawnPipe ("xmobar")
 
-xmonad $ withUrgencyHook NoUrgencyHook $ def {
+xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ def {
         terminal = "/usr/bin/urxvt -e /usr/bin/tmux"
         , manageHook = myManageHook
         , startupHook = setWMName "LG3D"
@@ -111,4 +115,4 @@ xmonad $ withUrgencyHook NoUrgencyHook $ def {
         }
         , workspaces = myWorkspaces
         , modMask = mod4Mask
-      } `additionalKeys` myShortcuts
+      } `additionalKeysP` myShortcuts

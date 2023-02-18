@@ -7,7 +7,7 @@ export XDG_CURRENT_DESKTOP=gnome
 #xscreensaver -no-splash &
 
 # Enable compositing support
-xcompmgr -n &
+picom &
 
 # Setting the wallpaper
 feh --bg-scale ~/.wallpaper &
